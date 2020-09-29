@@ -15,13 +15,13 @@
 
           <div class="card">
                <div class="card-header">
-                    <h4 class="card-title text-success pb-2">Liste Clients</h4>
+                    <h2 class="card-title text-success pb-3">Liste Clients</h2>
                </div>
                <div class="">
                     <div class="table-responsive">
                          <table class="table table-hover mt-6">
                               <thead>
-                                   <tr>
+                                   <tr class="text-success">
                                         <th>Nom</th>
                                         <th>TELEPHONE</th>
                                         <th>EMAIL</th>
@@ -34,7 +34,7 @@
                               </thead>
                               <tbody>
                                    @foreach($client as $clients)
-                                   <tr>
+                                   <tr class="font-weight-bold">
                                         <td class="product-name">
                                              <h5>{{ $clients->nom }}</h5>
                                         </td>

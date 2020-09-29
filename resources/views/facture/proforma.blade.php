@@ -138,7 +138,7 @@
           </td>
           <td>
             <h4>
-              <?php echo $total; ?>
+              @php echo $total; @endphp
             </h4>
           </td>
         </tr>
@@ -147,12 +147,12 @@
   </section>
   <footer>
 
-    <p>Arrêtée la présence facture proforma à la somme de :</p>
+    <p>Arrêtée la présence facture proforma à la somme de : @php echo NumConvert::word(1); @endphp</p>
 
     <h5 style="color: red;">
       Conditions:Règlement 50% avant démarrage des analyses , soit :
       <span style="color:black;">
-        <?php echo ($total / 2) . ' Frs CFA'; ?>
+        @php echo ($total / 2) . ' Frs CFA'; @endphp
       </span>
     </h5>
 
@@ -167,8 +167,7 @@
     </div>
 
     <div>
-      <h5 style="margin-top: 40%; text-align:center;">
-        ----------------------------------------------------------------------------------- <br>
+      <h5 style="margin-top: 20%; text-align:center;">
         BP53 - BAMBEY - TEL/FAX 33 973 63 48 - E-mail : cnrabambey@isra.sn
       </h5>
     </div>

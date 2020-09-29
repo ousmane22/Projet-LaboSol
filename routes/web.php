@@ -61,7 +61,11 @@ Route::get('/fiche_resultat/{file}','FicheDemandeController@ResultatParfiche')->
 //GESTION FACTURATION ROUTE
 Route::get('/facture','FactureController@getFacture')->name('factures');
 //generer facture pour chaque fiche de demande
-Route::get('/getFacture/{id}', 'FactureController@GenererFacture')->name('genererFacture');
+Route::get('/getFactureProforma/{id}', 'FactureController@GenererFacture')->name('proforma');
+
+//number to letter
+Route::get('number', 'FactureController@numberToLetter');
+
 
 
 

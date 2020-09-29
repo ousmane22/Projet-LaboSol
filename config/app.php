@@ -230,7 +230,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
        'Flashy' => MercurySeries\Flashy\Flashy::class,
-        'PDF' => Barryvdh\DomPDF\Facade::class,
+       'PDF' => Barryvdh\DomPDF\Facade::class,
+       'NumConvert' => 'HnhDigital\LaravelNumberConverter\Facade',
 
     ],
 

@@ -13,7 +13,7 @@
              <div class="table-responsive">
                <table class="table table-hover mt-6">
                  <thead class="text-success">
-                   <tr class="font-size-large">
+                   <tr>
                      <th>Code</th>
                      <th>Désignation</th>
                      <th>Date</th>
@@ -24,7 +24,7 @@
                  </thead>
                  <tbody>
                    @foreach($echantillon as $echantillons)
-                   <tr class="">
+                   <tr class="font-size-large">
                      <td>{{ $echantillons->id }}</td>
                      <td>{{ $echantillons->designation }}</td>
                      <td>{{ date('d/m/Y' ,strtotime($echantillons->date)) }}</td>

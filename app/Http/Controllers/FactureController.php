@@ -9,12 +9,14 @@ use App\Models\TypeClient;
 use App\Models\FicheDemande;
 use Illuminate\Http\Request;
 use App\Models\AnalyseDemander;
+use NumberFormatter;
 
 class FactureController extends Controller
 {
     public function getFacture()
     {
-        $fiche = FicheDemande::all();
+        $fiche = FicheDemande::orderBy('id','DESC')
+        ->get();
         return view('facture.facture',compact('fiche'));
     }
 
@@ -32,6 +34,15 @@ class FactureController extends Controller
         $pdf = PDF::loadView('facture.proforma', compact('fiche'));
         return $pdf->stream();
         return view('facture.proforma',compact('fiche','prix'));
+    }
+
+    public function  numberToLettre()
+    {
+        $number = new NumberFormatter('fr', NumberFormatter
+        ::SPELLOUT);
+        echo $number->format(1000);
+        dd($number);
+        return view('facture.proforma', compact('fiche', 'prix'));
     }
 
 
