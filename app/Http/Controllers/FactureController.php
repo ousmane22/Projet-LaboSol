@@ -29,9 +29,9 @@ class FactureController extends Controller
         ->get();
 
 
-        $pdf = PDF::loadView('facture.generer', compact('fiche'));
+        $pdf = PDF::loadView('facture.proforma', compact('fiche'));
         return $pdf->stream();
-        return view('facture.generer',compact('fiche','prix'));
+        return view('facture.proforma',compact('fiche','prix'));
     }
 
 
