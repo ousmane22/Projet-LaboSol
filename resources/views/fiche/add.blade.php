@@ -41,9 +41,6 @@
           <div class="form-body">
            <div class="row">
 
-
-
-
             <div class="col-md-6 col-12">
              <div class="form-group">
               <label for="nombre_echantillon">Nombre Echantillon</label>

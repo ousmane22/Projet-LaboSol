@@ -24,7 +24,7 @@
                  </thead>
                  <tbody>
                    @foreach($echantillon as $echantillons)
-                   <tr class="font-size-large">
+                   <tr style="font-size: 17px;">
                      <td>{{ $echantillons->id }}</td>
                      <td>{{ $echantillons->designation }}</td>
                      <td>{{ date('d/m/Y' ,strtotime($echantillons->date)) }}</td>
@@ -35,6 +35,7 @@
                  </tbody>
                  @endforeach
                </table>
+               {{ $echantillon->links() }}
              </div>
            </div>
          </div>

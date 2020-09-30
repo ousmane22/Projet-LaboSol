@@ -15,7 +15,7 @@
        </div>
       </div>
       <h2 class="text-bold-700 mt-1 text-success">Clients</h2>
-      <h3>Total :{{ $client->count() }}</h3>
+      <h3>Total :<span class="text-danger"> {{ $client->count() }}</span></h3>
      </div>
      <div class="card-content">
       <div id="line-area-chart-1"></div>
@@ -31,7 +31,7 @@
        </div>
       </div>
       <h2 class="text-bold-700 mt-1 text-success">Echantillons</h2>
-      <h3>Total :{{ $echantillon->count() }}</h3>
+      <h3>Total : <span class="text-info">{{ $echantillon->count() }}</span></h3>
      </div>
      <div class="card-content">
       <div id="line-area-chart-2"></div>
@@ -47,7 +47,7 @@
        </div>
       </div>
       <h2 class="text-bold-700 mt-1 text-success">Fiches Demandes</h2>
-      <h3>Total :{{ $fiche->count() }}</h3>
+      <h3>Total : <span class="text-success"> {{ $fiche->count() }}</span></h3>
      </div>
      <div class="card-content">
       <div id="line-area-chart-3"></div>

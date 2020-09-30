@@ -28,6 +28,11 @@ Route::get('/list', 'ClientController@listClient')->name('list.client');
 Route::get('/rechercher', 'ClientController@rechercherClient')->name('rechercher');
 Route::get('/getclient', 'ClientController@getClient')->name('getClient');
 
+//impirmer la liste des cliients
+Route::get('/getListclient', 'ClientController@getListClient')->name('getListClient');
+
+
+
 
 
 //FICHE DEMANDE ROUTE
@@ -60,11 +65,21 @@ Route::get('/fiche_resultat/{file}','FicheDemandeController@ResultatParfiche')->
 
 //GESTION FACTURATION ROUTE
 Route::get('/facture','FactureController@getFacture')->name('factures');
-//generer facture pour chaque fiche de demande
+//generer facture proforma pour chaque fiche de demande
 Route::get('/getFactureProforma/{id}', 'FactureController@GenererFacture')->name('proforma');
+//generer facture definitive pour chaque fiche de demande
+Route::get('/getFactureDefinitive/{id}', 'FactureController@factureDefinitive')->name('definitive');
 
-//number to letter
-Route::get('number', 'FactureController@numberToLetter');
+
+
+//analyses et prix
+
+Route::get('/listAnalyse', 'AnalysePrixController@ListAnalysePrix')->name('listAnalyse');
+Route::post('/storeAnalyse', 'AnalysePrixController@addAnalyse')->name('addAnalyse');
+Route::get('/getAnalysePrix', 'AnalysePrixController@getListAnalysePrix')->name('getListAnalysePrix');
+
+
+
 
 
 

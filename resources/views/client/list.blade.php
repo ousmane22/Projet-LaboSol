@@ -11,11 +11,13 @@
 <div class="row" id="table-hover-row">
      <div class="col-md-12">
           <!--rechercher-->
+
           @include('inc.barreRecherche')
 
           <div class="card">
                <div class="card-header">
                     <h2 class="card-title text-success pb-3">Liste Clients</h2>
+                    <a href="{{ route('getListClient') }}" class="btn btn-danger mb-5"><span><i class="fa fa-print"></i></span>Imprimer la liste</a>
                </div>
                <div class="">
                     <div class="table-responsive">
@@ -27,12 +29,12 @@
                                         <th>EMAIL</th>
                                         <th>ADRESSE</th>
                                         <th>TYPE CLIENT</th>
-                                        <th>DETAIL Postal</th>
+                                        <th>DETAIL</th>
                                         <th>Action</th>
 
                                    </tr>
                               </thead>
-                              <tbody>
+                              <tbody style="font-weight: bold;">
                                    @foreach($client as $clients)
                                    <tr class="font-weight-bold">
                                         <td class="product-name">

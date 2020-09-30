@@ -3,7 +3,7 @@
 
 <br><br><br><br><br><br><br>
 <div id="echantillon">
- <div class="card col-md-6 col-lg-12">
+ <div class="card col-md-6 col-lg-9 offset-2">
   <div class="card-header">
    <h1 class="text-success">Ajouter un nouveau echantillon</h1>
   </div>

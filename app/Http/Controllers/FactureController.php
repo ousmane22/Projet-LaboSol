@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use NumberToWords\NumberToWords;
 use App\Models\Prix;
 use App\Models\Client;
 use PDF;
@@ -16,35 +17,44 @@ class FactureController extends Controller
     public function getFacture()
     {
         $fiche = FicheDemande::orderBy('id','DESC')
-        ->get();
+        ->paginate(8);
         return view('facture.facture',compact('fiche'));
     }
 
     public function GenererFacture($id)
     {
         $fiche = FicheDemande::findOrFail($id)
+        ->with('analysedemande')
         ->where('id',$id)
-        ->with('echantillon', 'analysedemande','client')
-        ->get();
+        ->get();   
+
+       
+        //Recuperer l'ensemble Analyse demanders 
+        $analyse = AnalyseDemander::count();
         
-        $prix = TypeClient::with('prix')
-        ->get();
 
-
-        $pdf = PDF::loadView('facture.proforma', compact('fiche'));
+        $pdf = PDF::loadView('facture.proforma', compact('fiche','analyse'));
         return $pdf->stream();
-        return view('facture.proforma',compact('fiche','prix'));
+
+
     }
 
-    public function  numberToLettre()
+    public function factureDefinitive($id)
     {
-        $number = new NumberFormatter('fr', NumberFormatter
-        ::SPELLOUT);
-        echo $number->format(1000);
-        dd($number);
-        return view('facture.proforma', compact('fiche', 'prix'));
+        $fiche = FicheDemande::findOrFail($id)
+            ->with('analysedemande')
+            ->where('id', $id)
+            ->get();
+
+        //Recuperer l'ensemble Analyse demanders 
+        $analyse = AnalyseDemander::count();
+
+
+        $pdf = PDF::loadView('facture.definitive', compact('fiche', 'analyse'));
+        return $pdf->stream();
     }
 
 
+    
         
 }

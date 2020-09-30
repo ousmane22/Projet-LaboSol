@@ -36,20 +36,26 @@
     <div style="display:block;">
       <div style="float:left">
         <div style="color: green; padding-top:0%;">
-          <h5>REPUBLIQUE DU SENEGAL</h5>
-          <p><span style="color:green; padding-bottom:3%;">Un Peuple</span> -
+
+          <p>
+            REPUBLIQUE DU SENEGAL <br>
+            <span style="color:green; padding-bottom:3%;">Un Peuple</span> -
             <span style="color:yellowgreen">Un But</span> -
-            <span style="color:red">Une Foi</span></p>
+            <span style="color:red">Une Foi</span>
+          </p>
 
           <h5>MINISTERE DE L'AGRICULTURE <br>
             ET DE L'EQUIPEMENT RURAL
           </h5>
+
+
           <P>
+            INSTITUT SENEGALAISE DE <br>
+            RECHERCHES AGRICOLES<br>
             <img src="images/logo.jpg" alt="" width="60" height="60" style="padding-bottom: 0%;">
           </P>
-          <h5>INSTITUT SENEGALAISE DE <br>
-            RECHERCHES AGRICOLES
           </h5>
+
           <h5>
             CENTRE NATIONALE DE
             <br> RECHERCHES AGRONOMIQUES
@@ -60,11 +66,10 @@
 
     <!--right div -->
     <div style="text-align: right;">
-      N°________________/ISRA/CNRA/SA <br><br>
-      Bambey,le________________________ <br><br>
-
+      N° ________ /ISRA/CNRA/SA <br><br>
+      <p>Bambey,le <?php echo date("d/m/Y"); ?> <br><br></p>
       @foreach($fiche as $fiches)
-      <h4><span style="color:green">CLIENT</span>:{{ $fiches->client->nom }} ({{ $fiches->client->type->type }})
+      <h4><span style="color:green">CLIENT</span> : {{ $fiches->client->nom }} ({{ $fiches->client->type->type }})
       </h4>
       @endforeach
 
@@ -72,19 +77,33 @@
     </div>
   </header>
 
-
-  <section style="margin-top:20% ;">
+  <!-- NUMERO DE LA FACTURE-->
+  <section style="margin-top:15% ;">
     <div>
-      <h3 style="text-align:center;">FACTURE PROFORMA N°___________________</h3>
+
+      @foreach($fiche as $fiches)
+
+      @if( $analyse == ($fiches->analysedemande->count())) <h1 style="text-align:center; text-decoration:underline;">FACTURE PROFORMA N°
+        {{ $fiches->id }}<?php echo date('y'); ?>AC{{ $fiches->nombre_echantillon}}
+      </h1>
+      @endif
+      <!--  FACTURE AVEC ANALYSE COMPPLET-->
+      @if( $analyse > ($fiches->analysedemande->count()))
+      <h3 style="text-align:center;">FACTURE PROFORMA N°
+        {{ $fiches->id }}<?php echo date('y'); ?>AP{{ $fiches->nombre_echantillon}}
+      </h3>
+      @endif
+      @endforeach
     </div>
+    <!-- FIN NUMERO FACTURE-->
 
     <table id="customers">
-      <thead>
+      <thead style="background-color: green;">
         <tr>
-          <th>DESIGNATION</th>
-          <th>QUANTITE</th>
-          <th>PRIX UNITAIRE</th>
-          <th>MONTANT</th>
+          <th style="color:white">DESIGNATION</th>
+          <th style="color:white">QUANTITE</th>
+          <th style="color:white">PRIX UNITAIRE</th>
+          <th style="color:white">MONTANT</th>
         </tr>
       </thead>
 
@@ -147,7 +166,17 @@
   </section>
   <footer>
 
-    <p>Arrêtée la présence facture proforma à la somme de : @php echo NumConvert::word(1); @endphp</p>
+    <!-- NUMBER TO LETTER FUNCTION -->
+    <p>Arrêtée la présence facture proforma à la somme de :
+      <strong>
+        <?php
+        $digit = new NumberFormatter('fr', NumberFormatter::SPELLOUT);
+        echo  strtoupper($digit->format($total)) . ' FRANCS CFA';
+        ?>
+      </strong>
+    </p>
+    <!-- END NUMBER TO LETTER FUNCTION -->
+
 
     <h5 style="color: red;">
       Conditions:Règlement 50% avant démarrage des analyses , soit :
@@ -156,14 +185,13 @@
       </span>
     </h5>
 
-    <div style="display: block; margin-top:10px">
-      <div style="display: inline-block;">
-        Le chef du Service Administratif
-      </div>
+    <div style="display: inline-block;">
+      Le chef du Service Administratif
+    </div>
 
-      <div style="float: right;">
-        La Directrice
-      </div>
+    <div style="float: right;">
+      La Directrice
+    </div>
     </div>
 
     <div>

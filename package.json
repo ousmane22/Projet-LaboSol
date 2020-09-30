@@ -26,6 +26,7 @@
     "dependencies": {
         "laravel-vue-validator": "^1.0.7",
         "sweetalert2": "^9.17.2",
+        "tailwindcss": "^1.8.10",
         "vue-flashy": "^0.2.0"
     }
 }

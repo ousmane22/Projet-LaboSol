@@ -9,7 +9,8 @@ class AnalyseDemander extends Model
    
 
     protected $guarded = [];
- 
+    protected $table = 'analyse_demanders';
+    public $timestamps = false;
 
     public function details()
     {

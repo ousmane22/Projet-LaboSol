@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Client;
-use App\Models\TypeClient;
+use PDF;
 use Dotenv\Result\Result;
+use App\Models\TypeClient;
 use App\Models\DetailClient;
 use Illuminate\Http\Request;
 use MercurySeries\Flashy\Flashy;
@@ -57,9 +58,11 @@ class ClientController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function getListClient()
     {
-        //
+        $client = Client::all();
+        $client = PDF::loadview('client.getListClient',compact('client'));
+        return $client->stream();
     }
 
     public function getDetailsTypeClient($id)
@@ -98,7 +101,6 @@ class ClientController extends Controller
         $client = Client::with('detailType')
         ->orderBy('id','DESC')
         ->paginate(10);
-       
         return view('client.list',compact('client'));
     }
 
@@ -108,10 +110,6 @@ class ClientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.

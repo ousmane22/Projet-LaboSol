@@ -67,7 +67,7 @@ class EchantillonController extends Controller
     {
         Carbon::setLocale('fr');
         $echantillon = Echantillon::with('typeechantillon')
-        ->get();
+        ->paginate(8);
         return view('echantillon.list', compact('echantillon'));
       
 

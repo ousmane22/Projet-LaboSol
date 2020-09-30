@@ -190,8 +190,15 @@
 
         <li class=" nav-item"><a href="#"><i class="feather icon-printer"></i><span class="menu-title" data-i18n="User">Gestion Facturation</span></a>
           <ul class="menu-content">
-            <li><a href="{{ route('factures') }}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List">Générer une facture</span></a>
-            </li>
+            <li><a href="{{ route('factures') }}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List">Générer une facture</span></a></li>
+        </li>
+        </ul>
+        </li>
+
+        <li class=" nav-item"><a href="#"><i class="feather icon-book-open"></i><span class="menu-title" data-i18n="User">Gestion Analyses</span></a>
+          <ul class="menu-content">
+            <li><a href="{{ route('listAnalyse') }}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List">Ajouter une Analyses</span></a></li>
+            <li><a href="{{ route('getListAnalysePrix') }}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List">Analyse et Prix</span></a></li>
         </li>
         </ul>
         </li>
