@@ -14,17 +14,17 @@
                <table class="table table-hover mt-6">
                  <thead class="text-success">
                    <tr>
-                     <th>Code</th>
-                     <th>Désignation</th>
-                     <th>Date</th>
-                     <th>Client</th>
-                     <th>Numéro Fiche demande</th>
-                     <th>Type echantillon</th>
+                     <th style="font-size:16px;">Code</th>
+                     <th style="font-size:16px;">Désignation</th>
+                     <th style="font-size:16px;">Date</th>
+                     <th style="font-size:16px;">Client</th>
+                     <th style="font-size:16px;">Numéro Fiche demande</th>
+                     <th style="font-size:16px;">Type echantillon</th>
                    </tr>
                  </thead>
                  <tbody>
                    @foreach($echantillon as $echantillons)
-                   <tr style="font-size: 17px;">
+                   <tr style="font-size: 14px;">
                      <td>{{ $echantillons->id }}</td>
                      <td>{{ $echantillons->designation }}</td>
                      <td>{{ date('d/m/Y' ,strtotime($echantillons->date)) }}</td>

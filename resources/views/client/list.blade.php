@@ -16,7 +16,7 @@
 
           <div class="card">
                <div class="card-header">
-                    <h2 class="card-title text-success pb-3">Liste Clients</h2>
+                    <h1 class="card-title text-success pb-3">Liste Clients</h1>
                     <a href="{{ route('getListClient') }}" class="btn btn-danger mb-5"><span><i class="fa fa-print"></i></span>Imprimer la liste</a>
                </div>
                <div class="">
@@ -24,38 +24,38 @@
                          <table class="table table-hover mt-6">
                               <thead>
                                    <tr class="text-success">
-                                        <th>Nom</th>
-                                        <th>TELEPHONE</th>
-                                        <th>EMAIL</th>
-                                        <th>ADRESSE</th>
-                                        <th>TYPE CLIENT</th>
-                                        <th>DETAIL</th>
-                                        <th>Action</th>
+                                        <th style="font-size:16px;">Nom</th>
+                                        <th style="font-size:16px;">TELEPHONE</th>
+                                        <th style="font-size:16px;">EMAIL</th>
+                                        <th style="font-size:16px;">ADRESSE</th>
+                                        <th style="font-size:16px;">TYPE CLIENT</th>
+                                        <th style="font-size:16px;">DETAIL</th>
+                                        <th style="font-size:16px;">Action</th>
 
                                    </tr>
                               </thead>
-                              <tbody style="font-weight: bold;">
+                              <tbody">
                                    @foreach($client as $clients)
-                                   <tr class="font-weight-bold">
-                                        <td class="product-name">
-                                             <h5>{{ $clients->nom }}</h5>
-                                        </td>
-                                        <td class="product-category">
-                                             <h5>{{ $clients->telephone }}</h5>
-                                        </td>
-                                        <td class="product-category">
-                                             <h5>{{ $clients->email }}</h5>
+                                   <tr class="font-weight-bold" style="font-weight: bold; font-size:14px;">
+                                        <td>
+                                             {{ $clients->nom }}
                                         </td>
                                         <td>
-                                             <h5>{{ $clients->adresse }}</h5>
+                                             {{ $clients->telephone }}
+                                        </td>
+                                        <td>
+                                             {{ $clients->email }}
+                                        </td>
+                                        <td>
+                                             {{ $clients->adresse }}
                                         </td>
 
                                         <td class="product-price">
-                                             <h5>{{ $clients->type->type }}</h5>
+                                             {{ $clients->type->type }}
                                         </td>
 
                                         <td class="product-price">
-                                             <h5>{{ $clients->detailType->details }}</h5>
+                                             {{ $clients->detailType->details }}
                                         </td>
 
 
@@ -64,8 +64,8 @@
                                         </td>
                                    </tr>
                                    @endforeach
-                              </tbody>
-                              {{ $client->links() }}
+                                   </tbody>
+                                   {{ $client->links() }}
                          </table>
                          {{ $client->links() }}
                     </div>

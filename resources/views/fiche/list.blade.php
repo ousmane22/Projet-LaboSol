@@ -27,18 +27,18 @@
      <table class="table table-hover mt-6">
       <thead class="text-success">
        <tr>
-        <th>NUMERO Fiche</th>
-        <th>NOMBRE ECHANTILLONS</th>
-        <th>CLIENT</th>
-        <th>Voir Fiche</th>
-        <th>Enregister Fiche résultat</th>
-        <th>Voir Fiche résultat</th>
+           <th>NUMERO Fiche</th>
+           <th>NOMBRE ECHANTILLONS</th>
+           <th>CLIENT</th>
+           <th>Voir Fiche</th>
+           <th>Enregister Fiche résultat</th>
+           <th>Voir Fiche résultat</th>
        </tr>
       </thead>
       <tbody>
        @foreach($fiche as $fiches)
        <tr>
-        <td class="product-name">
+        <td style="text-align:center;">
          <h5>{{ $fiches->id }}</h5>
         </td>
         <td class="product-category">
