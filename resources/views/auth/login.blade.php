@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -31,9 +31,7 @@
                     <div class="form-items">
                         <div class="website-logo-inside">
                             <a href="index.html">
-                                <div class="logo">
-                                    <img class="logo-size" src="images/logo-light.svg" alt="">
-                                </div>
+    
                             </a>
                         </div>
                         <div class="page-links">
@@ -72,6 +70,77 @@
         <script type="text/javascript" src="{{ asset('logins/js/popper.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('logins/js/bootstrap.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('logins/js/main.js') }}"></script>
+</body>
+
+</html> -->
+
+
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Labo Login</title>
+
+    <style>
+        body {
+            background-color: #F0F2F5;
+        }
+
+        .form {
+            margin-top: 100px;
+        }
+
+        .card {
+            margin-top: 50px;
+        }
+
+        .btn {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row container form">
+        <div class="col-md-7">
+            <h2 class="text-success text-center">Laboratoire</h2>
+            <h5 class="text-success text-center">Sols-Eaux-Plantes</h5>
+            <h5 class="text-success text-center">ISRA</h5>
+        </div>
+        <div class="card col-md-5 p-3">
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <input type="email" class="form-control p-4" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control p-4" id="exampleInputPassword1">
+                    </div>
+
+                    <button type="submit" class="btn btn-success  btn-block p-3.5">Connexion</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </body>
 
 </html>
