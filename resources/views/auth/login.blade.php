@@ -114,7 +114,7 @@
             <h5 class="text-success text-center">Sols-Eaux-Plantes</h5>
             <h5 class="text-success text-center">ISRA</h5>
         </div>
-        <div class="card col-md-5 p-3">
+        <div class="card col-md-5 offset-1 p-3">
             <div class="card-body">
                 <form>
                     <div class="form-group">
