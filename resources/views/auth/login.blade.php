@@ -15,9 +15,7 @@
     <div class="form-body" class="container-fluid">
         <div class="website-logo">
             <a href="index.html">
-                <div class="logo">
-                    <img class="logo-size" src="{{ asset('logins/images/logo-light.svg') }}" alt="">
-                </div>
+               
             </a>
         </div>
         <div class="row">
