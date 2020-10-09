@@ -109,7 +109,7 @@
 
 <body>
     <div class="row container form">
-        <div class="col-md-7">
+        <div class="col-md-6">
             <h2 class="text-success text-center">Laboratoire</h2>
             <h5 class="text-success text-center">Sols-Eaux-Plantes</h5>
             <h5 class="text-success text-center">ISRA</h5>
