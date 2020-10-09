@@ -108,10 +108,10 @@
               </ul>
             </div>
             @auth
-            <ul class="nav navbar-nav float-right">
+            <!-- <ul class="nav navbar-nav float-right">
               <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
-                  <div class="user-nav d-sm-flex d-none"><span class="user-name text-bold-600">
-                      <h4>Bonjour [{{ ucfirst(trans(Auth::user()->name)) }}]</h4>
+                  <div class="user-nav d-sm-flex d-none mr-5"><span class="user-name text-bold-600">
+                      <h4>Bienvenue <span class="text-primary">{{ ucfirst(trans(Auth::user()->name)) }}</span></h4>
                     </span><span class="user-status text-success">disponible</span></div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -126,20 +126,33 @@
                 </div>
           </div>
           </li>
-          </ul>
-          @endauth
+          </ul> -->
+
+            <!-- Example single danger button -->
+            <div class="btn-group mr-5">
+              <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Bienvenue {{ ucfirst(trans(Auth::user()->name)) }}
+                <i class="fa fa-user-circle fa-2x"></i>
+              </button>
+              
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                  {{ __('Deconnexion') }}
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+                </form>
+              </div>
+            </div>
+            @endauth
+          </div>
         </div>
-      </div>
       </div>
     </nav>
 
     <!-- END: Header-->
-
-
-
-
-
-
     <!-- BEGIN: Main Menu-->
     <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
       <div class="navbar-header">

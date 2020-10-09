@@ -12,7 +12,7 @@
     <div class="row breadcrumbs-top">
      <div class="col-12">
       <h2 class="content-header-title float-left mb-0 text-success pb-2">Ajouter Fiche Demande D'analyse</h2>
-      
+
      </div>
     </div>
    </div>
@@ -44,7 +44,7 @@
             <div class="col-md-6 col-12">
              <div class="form-group">
               <label for="nombre_echantillon">Nombre Echantillon</label>
-              <input type="number" id="nombre_echantillon" class="form-control" placeholder="nombre_echantillon" name="nombre_echantillon" value="{{ old('nombre_echantillon') }}">
+              <input type="number" id="nombre_echantillon" class="form-control p-4" placeholder="nombre_echantillon" name="nombre_echantillon" value="{{ old('nombre_echantillon') }}">
               @error('nombre_echantillon') <p class="text-danger">{{ $message }} @enderror</p>
              </div>
             </div>
@@ -52,7 +52,7 @@
             <div class="col-md-6 col-12">
              <div class="form-group">
               <label for="">Longitude</label>
-              <input type="number" id="longitude" class="form-control" name="longitude" placeholder="longitude" value="{{ old('longitude') }}">
+              <input type="number" id="longitude" class="form-control p-4" name="longitude" placeholder="longitude" value="{{ old('longitude') }}">
               @error('longitude') <p class="text-danger">{{ $message }} @enderror</p>
              </div>
             </div>
@@ -61,7 +61,7 @@
             <div class="col-md-6 col-12">
              <div class="form-group">
               <label for="	client_id">Selectionner le Client</label>
-              <select name="client_id" id="client_id" class="form-control" value="{{ old('client_id') }}">
+              <select name="client_id" id="client_id" class="form-control p-4" value="{{ old('client_id') }}">
                <option value="">Selectionner le Client</option>
                @foreach($client as $clients)
                <option value="{{ $clients->id }}">{{ $clients->nom }}</option>
@@ -75,19 +75,16 @@
             <div class="col-md-6 col-12">
              <div class="form-group">
               <label for="">Latitude</label>
-              <input type="number" id="	latitude" class="form-control" name="latitude" placeholder="latitude" value="{{ old('latitude') }}">
+              <input type="number" id="	latitude" class="form-control p-4" name="latitude" placeholder="latitude" value="{{ old('latitude') }}">
               @error('latitude') <p class="text-danger">{{ $message }} @enderror</p>
              </div>
             </div>
 
 
-
-
-
             <div class="col-md-6 col-12">
              <div class="form-group">
               <label for="">Culture</label>
-              <input type="text" id="culture" class="form-control" name="culture" placeholder="culture" value="{{ old('culture') }}">
+              <input type="text" id="culture" class="form-control p-4" name="culture" placeholder="culture" value="{{ old('culture') }}">
               @error('culture') <p class="text-danger">{{ $message }} @enderror</p>
              </div>
             </div>
@@ -97,7 +94,7 @@
             <div class="col-md-6 col-12">
              <div class="form-group">
               <label for="">Antecedents Culturaux </label>
-              <input type="text" id="AntecedentsCulturaux	" class="form-control" name="AntecedentsCulturaux" placeholder="Antecedents Culturaux" value="{{ old('AntecedentsCulturaux	') }}">
+              <input type="text" id="AntecedentsCulturaux	" class="form-control p-4" name="AntecedentsCulturaux" placeholder="Antecedents Culturaux" value="{{ old('AntecedentsCulturaux	') }}">
               @error('AntecedentsCulturaux') <p class="text-danger">{{ $message }} @enderror</p>
              </div>
             </div>
@@ -105,7 +102,7 @@
             <div class="col-md-6 col-12">
              <div class="form-group">
               <label for="">Date Reception</label>
-              <input type="date" id="DateReception	" class="form-control" name="DateReception" placeholder="" value="{{ old('DateReception') }}">
+              <input type="date" id="DateReception	" class="form-control p-4" name="DateReception" placeholder="" value="{{ old('DateReception') }}">
               @error('DateReception') <p class="text-danger">{{ $message }} @enderror</p>
              </div>
             </div>
@@ -122,7 +119,7 @@
             <div class="col-md-6 col-12">
              <div class="form-group">
               <label for="">Réceptionné Par</label>
-              <input type="text" id="receptionerPar" class="form-control" name="receptionerPar" placeholder="receptionerPar" value="{{ old('receptionerPar') }}">
+              <input type="text" id="receptionerPar" class="form-control p-4" name="receptionerPar" placeholder="receptionerPar" value="{{ old('receptionerPar') }}">
               @error('receptionerPar') <p class="text-danger">{{ $message }} @enderror</p>
              </div>
             </div>
@@ -140,7 +137,7 @@
               </select>
               @error('analysedemander_id') <p class="text-danger">{{ $message }} @enderror</p>
              </div>
-            </div> 
+            </div>
 
 
             <div class="form-group col-12">
