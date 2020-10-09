@@ -130,7 +130,7 @@
 
             <!-- Example single danger button -->
             <div class="btn-group mr-5">
-              <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Bienvenue {{ ucfirst(trans(Auth::user()->name)) }}
                 <i class="fa fa-user-circle fa-2x"></i>
               </button>
