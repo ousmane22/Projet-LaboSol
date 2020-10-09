@@ -99,29 +99,72 @@
 
         .card {
             margin-top: 50px;
+            animation: anim 2s;
+
         }
 
         .btn {
             padding: 10px;
+        }
+
+        .txt {
+            animation: txt 2s;
+            ;
+        }
+
+        @keyframes anim {
+            0% {
+                margin-top: 10px;
+            }
+
+            40% {
+                margin-top: 100px;
+            }
+        }
+
+        @keyframes txt {
+            10% {
+                margin-top: 50px;
+            }
+
+
+            40% {
+                margin-top: 100px;
+            }
+
+
+
         }
     </style>
 </head>
 
 <body>
     <div class="row container form">
-        <div class="col-md-6">
+        <div class="col-md-6 txt">
             <h2 class="text-success text-center">Laboratoire</h2>
             <h5 class="text-success text-center">Sols-Eaux-Plantes</h5>
             <h5 class="text-success text-center">ISRA</h5>
         </div>
         <div class="card col-md-5 offset-1 p-3">
             <div class="card-body">
-                <form>
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
                     <div class="form-group">
-                        <input type="email" class="form-control p-4" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input class="form-control p-4" type="email" name="email" placeholder="E-mail Address" required>
+                        @error('email')
+                        <span class="text-danger">
+                            <strong class="text-danger">{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
+
                     <div class="form-group">
-                        <input type="password" class="form-control p-4" id="exampleInputPassword1">
+                        <input class="form-control p-4" type="password" name="password" placeholder="Password" required>
+                        @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong class="text-danger">{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
 
                     <button type="submit" class="btn btn-success  btn-block p-3.5">Connexion</button>
@@ -130,12 +173,6 @@
         </div>
 
     </div>
-
-
-
-
-
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
