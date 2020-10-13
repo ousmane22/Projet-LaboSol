@@ -61,7 +61,7 @@
             <div class="col-md-6 col-12">
              <div class="form-group">
               <label for="	client_id">Selectionner le Client</label>
-              <select name="client_id" id="client_id" class="form-control p-4" value="{{ old('client_id') }}">
+              <select name="client_id" id="client_id" class="form-control" value="{{ old('client_id') }}">
                <option value="">Selectionner le Client</option>
                @foreach($client as $clients)
                <option value="{{ $clients->id }}">{{ $clients->nom }}</option>

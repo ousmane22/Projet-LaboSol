@@ -72,7 +72,7 @@
                                                 <div class="col-md-6 col-12">
                                                     <div class="form-group">
                                                         <label for="company-column">Type Client</label>
-                                                        <select name="type_id" id="type_id" class="form-control p-4" value="{{ old('type_id') }}">
+                                                        <select name="type_id" id="type_id" class="form-control" value="{{ old('type_id') }}">
                                                             <option value="">Choisir le type du client</option>
                                                             @foreach($type_client as $typeclients)
                                                             <option value="{{ $typeclients->id }}">{{ $typeclients->type }}</option>
@@ -85,7 +85,7 @@
                                                 <div class="col-md-6 col-12">
                                                     <div class="form-group">
                                                         <label for="detail">Details Type Client</label>
-                                                        <select name="detail_client_id" id="detail_client_id" class="form-control p-4" value="{{ old('detailsType') }}">
+                                                        <select name="detail_client_id" id="detail_client_id" class="form-control" value="{{ old('detailsType') }}">
                                                             <option value="" disabled="disabled">Détails type du client</option>
                                                         </select>
                                                         @error('detail_client_id') <p class="text-danger">{{ $message }} @enderror</p>

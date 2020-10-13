@@ -195,7 +195,7 @@
     </div>
 
     <div>
-      <h5 style="margin-top: 20%; text-align:center;">
+      <h5 style="margin-top: 52%; text-align:center;">
         BP53 - BAMBEY - TEL/FAX 33 973 63 48 - E-mail : cnrabambey@isra.sn
       </h5>
     </div>
